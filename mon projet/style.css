@@ -1,0 +1,14 @@
+/* Déclaration de la police Soopafresh */
+@font-face {
+    font-family: 'Soopafresh';
+    src: url('fonts/soopafresh.ttf') format('truetype'); /* Assure-toi que le fichier soopafresh.ttf est bien dans le dossier 'fonts' */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Application de la police Soopafresh au titre <h1> */
+h1 {
+    font-family: 'Soopafresh', sans-serif; /* Applique Soopafresh au titre */
+    color: darkblue; /* Exemple : change la couleur du texte */
+    text-align: center; /* Centrer le texte */
+}

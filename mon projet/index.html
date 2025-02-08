@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV du Jeu de l'oie par Tristan LE FLOCH</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: #4e73df;
+            margin: 0;
+            gap: 40px;
+        }
+
+        .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Change de "center" à "flex-start" pour aligner à gauche */
+    margin-right: 20px; /* Ajoute un peu d'espace entre le plateau et le reste */
+}
+
+
+           h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    margin: 0 auto;
+    color: #ffc954;
+    border: 3px solid #ffeb3b; /* Bordure jaune autour du titre */
+    padding: 10px; /* Ajout d'un peu de padding pour espacer le texte de la bordure */
+    
+    text-shadow: 0 0 0px black, 0 0 0px black; /* Contour noir léger autour du contour jaune */
+}
+
+        /* Structure du plateau en grille, 4 colonnes et 3 lignes */
+         .board {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px);
+    gap: 10px;
+    justify-items: center;
+    margin: 100px 0 20px 0; /* Ajouter une marge en haut de 100px pour descendre le plateau */
+}
+
+
+        .cell {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #e0f7fa;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            color: #333;
+            font-weight: bold; /* Rend les chiffres plus épais */
+        text-shadow: 
+        2px 2px 2px white, /* Ombre blanche à droite-bas */
+        -2px -2px 2px white, /* Ombre blanche à gauche-haut */
+        -2px 2px 2px white, /* Ombre blanche à gauche-bas */
+        2px -2px 2px white; /* Ombre blanche à droite-haut */
+        }
+
+.cell:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+    background-image: url('images/sunflower.jpg');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        }
+        .cell:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+    background-image: url('images/cabine.jpg');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+            
+        }
+        .cell:nth-child(3) {
+            grid-column: 3;
+            grid-row: 1;
+    background-image: url('images/earth.jpg');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        }
+        .cell:nth-child(4) {
+            grid-column: 4;
+            grid-row: 1;
+    background-image: url('images/jackie.jpg');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        }
+        .cell:nth-child(5) {
+            grid-column: 4;
+            grid-row: 2;
+    background-image: url('images/sach.jpg');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        }
+        .cell:nth-child(6) {
+            grid-column: 4;
+            grid-row: 3;
+    background-image: url('images/ippo.jpg');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        }
+        .cell:nth-child(7) {
+            grid-column: 3;
+            grid-row: 3;
+    background-image: url('images/monk.jpg');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        }
+        .cell:nth-child(8) {
+            grid-column: 2;
+            grid-row: 3;
+    background-image: url('images/disc.jpg');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        }
+        .cell:nth-child(9) {
+            grid-column: 1;
+            grid-row: 3;
+    background-image: url('images/jazztechno.png');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        }
+        .cell:nth-child(10) {
+            grid-column: 1;
+            grid-row: 2;
+    background-image: url('images/ending.jpg');
+    background-size: cover; /* Ajuste l'image pour remplir la cellule */
+    background-position: center; /* Centre l'image dans la cellule */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        }
+
+
+        /* Surbrillance de la case active */
+        .cell.active {
+            background-color: #ffeb3b;
+            box-shadow: 0 0 26px 10px rgba(255, 193, 7, 0.5);
+        }
+
+        .dice {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .replay { /* Nouveau bouton "Rejouer" ajouté */
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .info, .extra-info {
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff468;
+            border: 1px solid #ffb60d;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .extra-info {
+            background-color: #e1bee7;
+            border-color: #ab47bc;
+            height: 200px;
+            overflow-y: scroll;
+        }
+
+        .player { /* Image du pion (de base, dé1.png) */
+            width: 30px;
+            height: 30px;
+        }
+
+.image-angle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px; /* Ajuste la taille de l'image à ta convenance */
+    height: auto;
+}
+
+    </style>
+</head>
+<body>
+     <h1>CV du Jeu de l'oie par Tristan LE FLOCH</h1>
+
+<img src="images/goose.png" alt="Description de l'image" class="image-angle">
+
+
+    <div class="game-container">
+        <!-- Plateau de jeu -->
+        <div class="board" id="board">
+        <div class="cell" data-info="Bienvenue dans mon CV ! : Profil" data-extra="Créatif et aventureux, j'ai enrichi mon ouverture d'esprit grâce à deux ans en Australie à explorer et découvrir de nouvelles cultures. Doté d'un excellent relationnel, je sais collaborer efficacement et m'adapter à différents environnements. Également curieux et dynamique, j'aime relever de nouveaux défis et m'investir pleinement.">1</div>
+        <div class="cell" data-info="Contacts" data-extra="Retrouvez mes coordonnées ici:<br>☎︎ (438)410-6132<br>✉︎ tristanlefloch09@gmail.com<br>⌂ 1-6869 Rue Marquette, Montreal, H2G 2Y9">2</div>
+        <div class="cell" data-info="Langues" data-extra="<b>Mes langues :</b><br>• Français : Langue maternelle<br>• Anglais : Courant (2 ans de vie en Australie)<br>• Espagnol : Niveau intermédiaire (¡estoy aprendiendo!)">3</div>
+    <div class="cell" data-info="Projets" data-extra="Explorez mes projets récents et passés:<br><p><b>Projet Entrepreneurial :</b><br>
+Création d’un prototype d’entreprise.
+Etude de marché, modèle de revenu, et génération de traction.<p/> <p><b>Gestion de Projets:</b><br>
+Collaboration avec entreprises.
+Mise en place d’événements.
+Gestion de coûts, temps, qualité.</p> <p><b>Mémoire de bachelor:</b><br>
+Analyse de données.
+Conduite d’entretiens.
+Création de sondages.</p>">4</div>
+        <div class="cell" data-info="Expériences" data-extra="Un aperçu de mes expériences professionnelles:<br>
+<p><b>Spécialiste Assistance Client</b><br><i>Meta, Teleperformance, Portugal, 2024</i><br>• Suivi des demandes et coordination avec équipes internes pour résolution<br>• Gestion des interactions avec les utilisateurs de Meta Verified (Facebook, Instagram) avec satisfaction client maintenue à +72 %<br>• Gestion des interactions via phoning, mailing, chatting</p><p><b>Service et Restauration</b><br><i>Australie, 2022 - 2023</i><br>• Divers restaurants et bars tout autour du pays avec divers rôles :<br>• Chef de rang: management d’équipes, répartition des tâches, prise de commande<br>• Barman: vente, création de cocktails, mixologie<br>• Responsable de fonction: organisation et gestion</p><p><b>Assistant en Marketing et Communication</b><br><i>France, 2021</i><br>• Participation à la croissance de l'entreprise en développant et en mettant en œuvre des campagnes marketing ciblées.<br>• Collecte d'informations auprès des clients potentiels via phoning et mailing</p>">5</div>
+        <div class="cell" data-info="Parcours Scolaire" data-extra="Mon parcours académique en détail:<br>
+<p><b>Maitrise de gestion: Innovation et Entrepreneuriat</b><br>HEC MONTREAL - Québec, Canada<br><i>2024-Actuel</i></p>
+<p><b>Bachelor Of International Business Administration - English Section</b><br>MONTPELLIER BUSINESS SCHOOL - France<br><i>2018-2021</i></p>
+<p><b>Baccalauréat en Sciences Économiques et Sociales - Mention BIEN</b><br>LYCEE GEORGES POMPIDOU - France <br><i>2018</i></p>">6</div>
+        <div class="cell" data-info="Qualités" data-extra="<b>Quelques-unes de mes qualités personnelles.</b><br> <p>• Innovant<br>•
+Créatif<br>•
+Ouvert d’esprit<br>•
+Gestion d'équipe<br>•
+Campagnes publicitaires<br>•
+Compétences en MS Office<br>• Apprentissage rapide ! La preuve en est ce jeu !
+">7</div>
+        <div class="cell" data-info="Loisirs" data-extra="Découvrez mes <b>hobbies</b> et <b>loisirs:</b><br> <p>• Création de musiques sur le logiciel FL Studio <br>• Mix et DJing<br>• Sport : course, callisthénie et sports de combat<br>• Cuisine <br>• Voyage <br>• Lecture : Romans, Mangas, Divers">8</div>
+        <div class="cell" data-info="Artiste: Soleil Bleu" data-extra="<b> Soleil Bleu </b>: Mon alter ego musical<br>Si vous aimez le jazz et la techno, foncez découvrir les RUMBLEJAZZs sur toutes les plateformes de streaming!<br> <p>• Création musicale sur le logiciel FL Studio
+<br>• Gestion marketing et stratégies Tiktok et Instagram dédiés au partage 
+<br>• Publication sur plateformes de streaming (Spotify, Deezer, Apple Music...)
+">9</div>
+        <div class="cell" data-info="Merci d'avoir joué ! Relance le dé pour avoir accès aux cases manquantes. Bon jeu!" data-extra="Bravo vous avez gagné ! <br>Gagné le droit d'en savoir plus sur moi en entretien ;)<p>Je vous laisse découvrir les reste des infos sur moi en rejouant, en espérant que vous avez trouvé cela interactif ! En attente de votre retour !! ">10</div>
+    </div>
+
+
+        <!-- Boutons de jeu -->
+        <button class="dice" id="rollDice">Lancer le dé</button>
+        
+        <!-- Nouveau bouton "Rejouer" ajouté -->
+        <button class="replay" id="replay">Rejouer</button> 
+    </div>
+
+    <!-- Zone d'affichage des informations -->
+    <div>
+        <div class="info" id="info">Bienvenue dans mon CV ! Voici mon Profil: </div>
+        <div class="extra-info" id="extraInfo">Salut !<p> Je m'appelle Tristan et je vis à Montréal depuis septembre 2024. <br>Créatif et aventureux, j'ai enrichi mon ouverture d'esprit grâce à deux ans en Australie à explorer et découvrir de nouvelles cultures. Je suis doté d'un excellent relationnel, je sais collaborer efficacement et m'adapter à différents environnements. Également curieux et dynamique, j'aime relever de nouveaux défis et m'investir pleinement!</p> <p>Je tiens à préciser que j'ai créé et codé tout ce CV de A à Z. Je n'avais jamais fais de coding avant et je me suis régalé à découvrir ce monde donc un grand merci pour la demande de CV créatif!<br>Bon jeu!</p> <p><i>Il n'est possible de faire seulement que des 1 ou 2 pour faciliter la récolte d'infos :)</div>
+    </div>
+
+
+    <script>
+        // Variables
+        const cells = document.querySelectorAll('.cell'); /* Récupération des cellules du plateau */
+        const info = document.getElementById('info'); /* Zone d'infos principale */
+        const extraInfo = document.getElementById('extraInfo'); /* Zone d'infos supplémentaires */
+        const rollDiceButton = document.getElementById('rollDice'); /* Bouton lancer le dé */
+        const replayButton = document.getElementById('replay'); /* Bouton rejouer ajouté ici */
+        let currentPosition = 0; /* Position actuelle du joueur sur le plateau */
+        const player = document.createElement('img');
+        player.classList.add('player');
+        player.src = 'images/dice1.png'; // Image du pion de base (premier dé, ici "dice1.png")
+
+        // Ajout du pion (image du dé) à la position 0 (départ)
+        cells[currentPosition].appendChild(player);
+
+        // Lancer le dé
+        rollDiceButton.addEventListener('click', () => {
+            const diceRoll = Math.floor(Math.random() * 2) + 1; // Lancer le dé, entre 1 et 2
+            info.textContent = `Tu as lancé un ${diceRoll}!`;
+            player.src = `images/dice${diceRoll}.png`; /* Changer l'image du dé selon le résultat */
+
+            // Calcul de la nouvelle position du joueur
+            const newPosition = Math.min(currentPosition + diceRoll, cells.length - 1); /* Empêcher de dépasser la dernière case */
+            cells[currentPosition].removeChild(player); /* Enlever le pion de la case actuelle */
+
+            // Déplacement du pion à la nouvelle case
+            currentPosition = newPosition;
+            cells[currentPosition].appendChild(player);
+
+            // Surbrillance de la case active (avec la classe .active)
+            cells.forEach(cell => cell.classList.remove('active')); /* Enlever la surbrillance de toutes les cases */
+            cells[currentPosition].classList.add('active'); /* Ajouter la surbrillance à la case où est le pion */
+
+            // Afficher l'information de la case actuelle
+            const cellInfo = cells[currentPosition].dataset.info;
+            info.textContent = `Tu as lancé un ${diceRoll}! ${cellInfo}`;
+
+            // Afficher les informations supplémentaires
+            const cellExtraInfo = cells[currentPosition].dataset.extra;
+            extraInfo.innerHTML = cellExtraInfo || "Pas d'information supplémentaire disponible.";
+
+        });
+
+        // Fonction pour recommencer le jeu (rejouer)
+        replayButton.addEventListener('click', () => {
+            currentPosition = 0; /* Réinitialiser la position du joueur à 0 (départ) */
+            cells.forEach(cell => cell.classList.remove('active')); /* Enlever la surbrillance de toutes les cases */
+            cells[currentPosition].appendChild(player); /* Replacer le pion sur la première case */
+            info.innerHTML = "Bienvenue dans mon CV !<br> Voici mon Profil:"; /* Réinitialiser le texte de l'info */
+            extraInfo.innerHTML = "Salut !<p> Je m'appelle Tristan et je vis à Montréal depuis septembre 2024. <br>Créatif et aventureux, j'ai enrichi mon ouverture d'esprit grâce à deux ans en Australie à explorer et découvrir de nouvelles cultures. Je suis doté d'un excellent relationnel, je sais collaborer efficacement et m'adapter à différents environnements. Également curieux et dynamique, j'aime relever de nouveaux défis et m'investir pleinement!</p> <p>Je tiens à préciser que j'ai créé et codé tout ce CV de A à Z. Je n'avais jamais fais de coding avant et je me suis régalé à découvrir ce monde donc un grand merci pour la demande de CV créatif!<br>Bon jeu!</p> <p><i>Il n'est possible de faire seulement que des 1 ou 2 pour faciliter la récolte d'infos :)"; /* Réinitialiser les infos supplémentaires */
+        });
+    </script>
+</body>
+</html>
